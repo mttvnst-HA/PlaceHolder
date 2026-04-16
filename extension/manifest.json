@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Chatbot Relay",
+  "version": "0.1.0",
+  "description": "Broadcast prompts to Claude, ChatGPT, and Gemini tabs and relay their responses between each other.",
+  "permissions": ["tabs", "storage"],
+  "host_permissions": [
+    "https://claude.ai/*",
+    "https://chatgpt.com/*",
+    "https://chat.openai.com/*",
+    "https://gemini.google.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Chatbot Relay"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://claude.ai/*",
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*",
+        "https://gemini.google.com/*"
+      ],
+      "js": ["adapters.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

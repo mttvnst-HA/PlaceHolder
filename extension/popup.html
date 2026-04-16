@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Chatbot Relay</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Chatbot Relay</h1>
+      <button id="refresh" title="Refresh tab list" class="icon">&#x21bb;</button>
+    </header>
+
+    <section>
+      <h2>Open chatbot tabs</h2>
+      <ul id="tab-list"></ul>
+    </section>
+
+    <section>
+      <h2>Prompt to broadcast</h2>
+      <textarea id="prompt" rows="5" placeholder="Type or paste the prompt you want every selected bot to answer..."></textarea>
+      <div class="row site-picker">
+        <label><input type="checkbox" data-site="claude" checked /> Claude</label>
+        <label><input type="checkbox" data-site="chatgpt" checked /> ChatGPT</label>
+        <label><input type="checkbox" data-site="gemini" checked /> Gemini</label>
+      </div>
+      <div class="row">
+        <button id="broadcast" class="primary">Send to selected</button>
+        <button id="refresh-responses">Refresh responses</button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Latest responses</h2>
+      <div id="responses"></div>
+    </section>
+
+    <footer>
+      <small>Auto-detects when each bot finishes streaming. If a site's UI changes and capture fails, click <em>Refresh responses</em> to grab the latest visible message.</small>
+    </footer>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
