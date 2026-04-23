@@ -1,0 +1,38 @@
+{
+  "default_author": "Reviewer",
+  "date": "2026-04-23T12:00:00Z",
+  "authors_by_color": {
+    "red": "Alice Ng",
+    "blue": "Bob Ortiz"
+  },
+  "edits": [
+    {
+      "id": "e1",
+      "op": "replace",
+      "anchor": "quick brown fox",
+      "new_text": "nimble auburn fox",
+      "color": "red",
+      "page": 1,
+      "note": "red ink, strikethrough + replacement above"
+    },
+    {
+      "id": "e2",
+      "op": "insert",
+      "anchor": "jumps over the lazy dog",
+      "position": "after",
+      "new_text": " every single morning",
+      "color": "blue",
+      "page": 1,
+      "note": "blue ink, caret after 'dog' with margin text"
+    },
+    {
+      "id": "e3",
+      "op": "delete",
+      "anchor": "really really",
+      "color": "red",
+      "page": 2,
+      "note": "red strikethrough, no replacement"
+    }
+  ],
+  "questions": []
+}
